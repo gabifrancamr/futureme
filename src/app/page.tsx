@@ -1,10 +1,10 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Header } from "@/components/header/Header";
+import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-    </HStack>
+    <Flex direction="column">
+      <Header />
+    </Flex>
   );
 }

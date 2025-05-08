@@ -1,10 +1,12 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
+import { useAppContext } from "@/contexts/AppContext";
 import { Input, Stack, Textarea } from "@chakra-ui/react";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SetStateAction } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import * as zod from 'zod';
 
 const newTaskFormSchema = zod.object({
@@ -24,6 +26,7 @@ interface FormNewTaskProps {
 }
 
 export default function FormNewTask({ setOpen }: FormNewTaskProps) {
+    const { refetchTasks } = useAppContext()
     const {
         register,
         handleSubmit,
@@ -33,7 +36,24 @@ export default function FormNewTask({ setOpen }: FormNewTaskProps) {
     })
 
     async function handleNewTransaction(data: typeNewTaskSchema) {
+        try {
+            const response = await fetch('/api/newTask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
 
+            if (response.status === 200) {
+                await refetchTasks()
+                setOpen(false)
+                toast.success("Tarefa criada com sucesso")
+            }
+
+        } catch (error) {
+            toast.error('Um erro aconteceu. Por favor, tente novamente');
+        }
     }
 
     return (

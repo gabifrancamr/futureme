@@ -126,7 +126,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\transferencia ssd\\Documents\\projetos\\futureme\\futureme\\src\\generated\\prisma",
+      "value": "D:\\transferencia ssd\\Documents\\futureme\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -140,11 +140,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\transferencia ssd\\Documents\\projetos\\futureme\\futureme\\prisma\\schema.prisma",
+    "sourceFilePath": "D:\\transferencia ssd\\Documents\\futureme\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -154,11 +154,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "POSTGRES_PRISMA_URL",
-        "value": "postgresql://gabriela_admin_sistema:%23S3gur@_Pr0j3t0!gB1a@localhost:5432/futureme-bd?schema=public"
+        "value": null
       }
     }
   },

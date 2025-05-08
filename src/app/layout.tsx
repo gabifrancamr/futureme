@@ -1,4 +1,5 @@
 import { Provider } from "@/components/ui/provider";
+import { AppProvider } from "@/contexts/AppContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,8 +19,12 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="pt-BR">
       <body className={inter.className}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <AppProvider>
+            {children}
+          </AppProvider>
+        </Provider>
       </body>
-    </html>
+    </html >
   );
 }

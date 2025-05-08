@@ -1,7 +1,7 @@
 import { Task as TaskTypes } from "@/types"
 import { Badge, Card, Checkbox, Flex } from "@chakra-ui/react"
-import { HiPencilSquare } from "react-icons/hi2"
 import BtnDeleteTask from "../btnDeleteTask/BtnDeleteTask"
+import BtnEditTask from "../btnEditTask/BtnEditTask"
 
 interface TaskProps {
     task: TaskTypes
@@ -23,8 +23,8 @@ export function Task({ task }: TaskProps) {
                 <Flex justifyContent={"space-between"} mt="1rem">
                     <Badge colorPalette="blue">{task.status}</Badge>
 
-                    <Flex gap={"1rem"}>
-                        <HiPencilSquare size={15} />
+                    <Flex gap={"0.5rem"}>
+                        <BtnEditTask task={task} />
                         <BtnDeleteTask task={task} />
                     </Flex>
                 </Flex>

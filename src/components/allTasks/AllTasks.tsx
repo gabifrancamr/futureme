@@ -7,7 +7,7 @@ import { Task } from "../task/Task";
 export function AllTasks() {
     const { tasks } = useAppContext()
     return (
-        <Flex gap={"1rem"}>
+        <Flex gap={"1rem"} direction={{ base: "column", md: "row" }} justifyContent={"center"}>
             {tasks.map((task) => (
                 <Task key={task.id} task={task} />
 

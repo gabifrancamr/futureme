@@ -10,7 +10,7 @@ interface TaskProps {
 export function Task({ task }: TaskProps) {
     return (
         <Card.Root overflow="hidden" maxW="xl" colorPalette={"green"}>
-            <Card.Body gap={"0.5rem"}>
+            <Card.Body gap={"0.5rem"} justifyContent={"space-between"}>
                 <Checkbox.Root size={"md"}>
                     <Checkbox.HiddenInput />
                     <Checkbox.Control />

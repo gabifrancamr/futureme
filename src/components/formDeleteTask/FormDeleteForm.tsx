@@ -37,7 +37,7 @@ export default function FormDeleteTask({ task, setOpen }: FormDeleteTaskProps) {
                 toast.success('Transação deletada com sucesso')
             }
         } catch (error) {
-            toast.error('Um erro ocorreu. Tente novamente.');
+            toast.error('Falha em deletar usuário. Tente novamente mais tarde.');
         }
     }
     return (

@@ -30,7 +30,7 @@ export default function BtnEditTask({ task }: BtnEditTaskProps) {
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle textAlign={"center"}>Edit Transaction</DialogTitle>
+                    <DialogTitle textAlign={"center"}>Editar tarefa</DialogTitle>
                 </DialogHeader>
                 <DialogBody>
                     <FormEditTask task={task} setOpen={setOpen} />

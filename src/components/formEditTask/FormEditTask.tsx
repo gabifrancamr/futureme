@@ -66,7 +66,7 @@ export default function FormEditTask({ task, setOpen }: FormEditTaskProps) {
                 toast.success('Tarefa atualizada com sucesso.')
             }
         } catch (error) {
-            toast.error('Um erro ocorreu. Tente novamente.');
+            toast.error('Falha ao atualizar tarefa. Tente novamente.');
         }
 
     }

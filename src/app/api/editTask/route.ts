@@ -12,7 +12,7 @@ export async function POST(request: Request) {
             );
         }
 
-        const updatedTransaction = await db.task.update({
+        await db.task.update({
             where: { id },
             data: { title, description }
         })
@@ -24,10 +24,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error(error);
         return NextResponse.json(
-            {
-                status: 500,
-                message: 'Failed to update transaction. Please try again later.'
-            },
+            { message: 'Internal server error.' },
             { status: 500 }
         );
     }

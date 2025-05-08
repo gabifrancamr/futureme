@@ -11,7 +11,7 @@ export function Task({ task }: TaskProps) {
     return (
         <Card.Root overflow="hidden" maxW="xl" colorPalette={"green"}>
             <Card.Body gap={"0.5rem"}>
-                <Checkbox.Root size={"sm"}>
+                <Checkbox.Root size={"md"}>
                     <Checkbox.HiddenInput />
                     <Checkbox.Control />
                     <Checkbox.Label>Marcar como concluído</Checkbox.Label>

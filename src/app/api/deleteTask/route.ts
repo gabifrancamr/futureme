@@ -24,10 +24,7 @@ export async function DELETE(request: Request) {
     } catch (error) {
         console.error(error);
         return NextResponse.json(
-            {
-                status: 500,
-                message: 'Falha em deletar usuário. Tente novamente mais tarde.'
-            },
+            { message: 'Internal server error.' },
             { status: 500 }
         );
     }

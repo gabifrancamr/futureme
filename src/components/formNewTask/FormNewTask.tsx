@@ -35,7 +35,7 @@ export default function FormNewTask({ setOpen }: FormNewTaskProps) {
         resolver: zodResolver(newTaskFormSchema)
     })
 
-    async function handleNewTransaction(data: typeNewTaskSchema) {
+    async function handleNewTask(data: typeNewTaskSchema) {
         try {
             const response = await fetch('/api/newTask', {
                 method: 'POST',
@@ -52,12 +52,12 @@ export default function FormNewTask({ setOpen }: FormNewTaskProps) {
             }
 
         } catch (error) {
-            toast.error('Um erro aconteceu. Por favor, tente novamente');
+            toast.error('Falha ao salvar tarefa. Tente novamente');
         }
     }
 
     return (
-        <form onSubmit={handleSubmit(handleNewTransaction)}>
+        <form onSubmit={handleSubmit(handleNewTask)}>
             <Stack gap="4" align="center" maxW="sm">
                 <Field
                     label="Título"

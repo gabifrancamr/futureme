@@ -25,7 +25,7 @@ async function getTasks() {
 
     if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to fetch transactions data");
+        throw new Error(errorData.message || "Failed to fetch tasks data");
     }
 
     const data = await response.json();

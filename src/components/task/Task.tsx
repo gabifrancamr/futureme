@@ -15,11 +15,11 @@ export function Task({ task }: TaskProps) {
     const [checked, setChecked] = useState(false)
 
     return (
-        <Card.Root overflow="hidden" maxW="xl" colorPalette={"green"}>
+        <Card.Root overflow="hidden" maxW="xs" colorPalette={"green"}>
             <Card.Body gap={"0.5rem"} justifyContent={"space-between"}>
                 <CheckboxTask checked={checked} setChecked={setChecked} task={task} />
                 <Card.Title mb="2" textDecoration={checked ? "line-through" : "none"}>{task.title}</Card.Title>
-                <Card.Description textDecoration={checked ? "line-through" : "none"}>
+                <Card.Description textDecoration={checked ? "line-through" : "none"} truncate>
                     {task.description}
                 </Card.Description>
                 <Flex justifyContent={"space-between"} mt="1rem">

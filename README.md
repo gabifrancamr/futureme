@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Deploy do projeto: https://futureme-tawny.vercel.app/
 
-## Getting Started
+🧰 Tecnologias e Bibliotecas
+- Next.js – Framework React para SSR e SSG.
+- Prisma – ORM para banco de dados.
+- Chakra UI – Biblioteca de componentes acessíveis e estilizados.
+- React Hook Form – Manipulação de formulários.
+- Zod + @hookform/resolvers – Validação de formulários.
+- React Icons – Biblioteca de ícones.
+- Sonner – Notificações toast modernas e acessíveis.
 
-First, run the development server:
+## 🚀 Como executar a aplicação
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/gabifrancamr/futureme.git
+   cd futureme
+   ```
+2. **Instalar dependências**
+  ```bash
+  npm install
+  ```
+3.**Arquivo .env**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Na raiz do projeto criar arquivo .env
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+observação: usuário e senha de exemplo. Use usuário e senha do banco de dados
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   POSTGRES_DATABASE=futureme-bd
+   POSTGRES_USER=nome_do_usuario
+   POSTGRES_PASSWORD=senha_do_usuario
 
-## Learn More
+    POSTGRES_PRISMA_URL="postgresql://nome_do_usuario:senha_do_usuario@localhost:5432/futureme-bd?schema=public"
+    POSTGRES_URL_NON_POOLING="postgresql://nome_do_usuario:senha_do_usuario@localhost:5432/futureme-bd?schema=public"
+   ```
+4. **Execute comando docker**
+   ```bash
+   docker compose up -d
+   ```
+5. **Execute as migrações Prisma**
+   ```bash
+   npx prisma migrate dev
+   ```
+6.**Realizar conexão com banco de dados**
+   ```bash
+   Utilizei Banco de Dados DBeaver com PostgreSQL. Nome do banco, usuário e senha do arquivo .env
+   ```
+7. **Inicie a aplicação**
+   ```bash
+   npm run dev
+   Acesse em: http://localhost:3000
+   ```
+   
+ 
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

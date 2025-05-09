@@ -7,15 +7,15 @@ import { Task } from "../task/Task";
 export function AllTasks() {
     const { tasks } = useAppContext()
 
-    // const tasksInOrder = [...tasks].sort(
-    //     (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-    // );
+    const tasksInOrder = [...tasks].sort(
+        (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+    );
 
     return (
         <>
             {tasks.length > 0 ? (
                 <Flex gap={"1rem"} direction={{ base: "column", md: "row" }}>
-                    {tasks.map((task) => (
+                    {tasksInOrder.map((task) => (
                         <Task key={task.id} task={task} />
                     ))}
                 </Flex>

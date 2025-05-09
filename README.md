@@ -21,8 +21,11 @@ Deploy do projeto: https://futureme-tawny.vercel.app/
   npm install
   ```
 3.**Arquivo .env**
+
 Na raiz do projeto criar arquivo .env
-observação: user e password de exemplo, use usuário e senha do banco de dados
+
+observação: usuário e senha de exemplo. Use usuário e senha do banco de dados
+
    ```bash
    POSTGRES_DATABASE=futureme-bd
    POSTGRES_USER=nome_do_usuario

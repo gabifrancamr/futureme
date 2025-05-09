@@ -35,7 +35,7 @@ export default function BtnDeleteTask({ task }: BtnDeleteTaskProps) {
                 <DialogBody>
                     <Flex alignItems={"center"} justifyContent={"center"} gap={"1rem"}>
                         <FormDeleteTask task={task} setOpen={setOpen} />
-                        <Button colorPalette={"green"} onClick={() => setOpen(false)}>Cancel</Button>
+                        <Button colorPalette={"yellow"} onClick={() => setOpen(false)}>Cancel</Button>
                     </Flex>
                 </DialogBody>
                 <DialogCloseTrigger />

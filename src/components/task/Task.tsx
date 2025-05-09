@@ -18,8 +18,8 @@ export function Task({ task }: TaskProps) {
         <Card.Root overflow="hidden" maxW="xl" colorPalette={"green"}>
             <Card.Body gap={"0.5rem"} justifyContent={"space-between"}>
                 <CheckboxTask checked={checked} setChecked={setChecked} task={task} />
-                <Card.Title mb="2" textDecoration={checked ? "blink" : "none"}>{task.title}</Card.Title>
-                <Card.Description textDecoration={checked ? "blink" : "none"}>
+                <Card.Title mb="2" textDecoration={checked ? "line-through" : "none"}>{task.title}</Card.Title>
+                <Card.Description textDecoration={checked ? "line-through" : "none"}>
                     {task.description}
                 </Card.Description>
                 <Flex justifyContent={"space-between"} mt="1rem">

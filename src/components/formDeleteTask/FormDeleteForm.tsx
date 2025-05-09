@@ -34,7 +34,7 @@ export default function FormDeleteTask({ task, setOpen }: FormDeleteTaskProps) {
             if (response.status === 200) {
                 await refetchTasks()
                 setOpen(false)
-                toast.success('Transação deletada com sucesso')
+                toast.success('Tarefa deletada com sucesso')
             }
         } catch (error) {
             toast.error('Falha em deletar usuário. Tente novamente mais tarde.');

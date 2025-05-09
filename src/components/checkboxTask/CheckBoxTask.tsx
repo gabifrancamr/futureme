@@ -2,7 +2,8 @@
 
 import { useAppContext } from "@/contexts/AppContext";
 import { Task } from "@/types";
-import { Checkbox } from "@chakra-ui/react";
+import { Checkbox, Flex, Spinner } from "@chakra-ui/react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 interface CheckboxTaskProps {
@@ -13,8 +14,10 @@ interface CheckboxTaskProps {
 
 export function CheckboxTask({ checked, setChecked, task }: CheckboxTaskProps) {
     const { refetchTasks } = useAppContext()
+    const [updating, setUpdating] = useState(false)
 
     async function handleCheckedChange(newChecked: boolean) {
+        setUpdating(true)
         const statusValue = newChecked ? 'Concluída' : 'Em andamento'
 
         const payload = {
@@ -34,6 +37,7 @@ export function CheckboxTask({ checked, setChecked, task }: CheckboxTaskProps) {
             if (response.status === 200) {
                 setChecked(newChecked);
                 await refetchTasks()
+                setUpdating(false)
             }
         } catch (error) {
             toast.error('Falha ao mudar status. Tente novamente.');
@@ -41,17 +45,26 @@ export function CheckboxTask({ checked, setChecked, task }: CheckboxTaskProps) {
     }
 
     return (
-        <Checkbox.Root
-            size={"md"}
-            checked={checked}
-            onCheckedChange={(e) => {
-                const newChecked = !!e.checked;
-                handleCheckedChange(newChecked);
-            }}
-        >
-            <Checkbox.HiddenInput />
-            <Checkbox.Control />
-            <Checkbox.Label>Marcar como concluído</Checkbox.Label>
-        </Checkbox.Root>
+        <>
+            {updating ? (
+                <Flex>
+                    <Spinner size="sm" />
+                </Flex>
+            ) : (
+                <Checkbox.Root
+                    size={"md"}
+                    checked={checked}
+                    onCheckedChange={(e) => {
+                        const newChecked = !!e.checked;
+                        handleCheckedChange(newChecked);
+                    }}
+                    colorPalette={"yellow"}
+                >
+                    <Checkbox.HiddenInput />
+                    <Checkbox.Control />
+                    <Checkbox.Label>Marcar como concluído</Checkbox.Label>
+                </Checkbox.Root>
+            )}
+        </>
     )
 }

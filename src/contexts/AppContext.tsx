@@ -21,6 +21,7 @@ interface UsersProvider {
 async function getTasks() {
     const response = await fetch(`/api/getTasks`, {
         method: 'GET',
+        cache: 'no-store',
     });
 
     if (!response.ok) {

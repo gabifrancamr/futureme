@@ -77,7 +77,6 @@ export default function FormNewTask({ setOpen }: FormNewTaskProps) {
                 >
                     <Textarea
                         {...register("description")}
-                        maxLength={70}
                         colorPalette={"yellow"}
                     />
                 </Field>

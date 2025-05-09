@@ -92,7 +92,6 @@ export default function FormEditTask({ task, setOpen }: FormEditTaskProps) {
                 >
                     <Textarea
                         {...register("description")}
-                        maxLength={70}
                         colorPalette={"yellow"}
                     />
                 </Field>
@@ -103,7 +102,7 @@ export default function FormEditTask({ task, setOpen }: FormEditTaskProps) {
                     disabled={isSubmitting}
                     colorPalette={"yellow"}
                 >
-                    Criar
+                    Editar
                 </Button>
             </Stack>
         </form>
